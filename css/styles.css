@@ -1,0 +1,199 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../assets/background-wall.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'DS-digital';
+    src: url('../assets/ds-digital.otf');
+}
+
+@font-face {
+    font-family: 'boldAdobe';
+    src: url('../assets/AdobeClean-Bold.otf');
+}
+
+@font-face {
+    font-family: 'MediumAdobe';
+    src: url('../assets/AdobeClean-Medium.otf');
+}
+
+@font-face {
+    font-family: 'RegularAdobe';
+    src: url('../assets/AdobeClean-Regular.otf');
+}
+
+.pinpad-container {
+    background: #2c3e50;
+    padding: 30px 20px; /* Aumentamos el padding vertical */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 70%; /* Reducimos el ancho para hacerlo más vertical */
+    max-width: 400px;
+    margin: 20px auto; 
+}
+
+.lcd {
+    background: #ecf0f1;
+    color: #2c3e50;
+    padding: 15px 10px; /* Ajustamos el padding vertical */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: 'DS-digital';
+    position: relative;
+    padding-right: 30px;
+}
+
+.lcd::after {
+    content: '\1F634'; /* Unicode para el símbolo del ojo cerrado */
+    font-size: 20px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.lcd.open-eye::after {
+    content: '\1F440'; /* Unicode para el símbolo del ojo abierto */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Aumentamos el espacio entre botones */
+    font-family: 'MediumAdobe';}
+
+.wrong-pin {
+    background: #e74c3c;
+    color: white;
+    font-family: 'DS-digital';
+}
+
+.correct-pin {
+    background-color: #27ae60;
+    color: black;
+    font-family: 'DS-digital';
+}
+
+.not-a-number {
+    background-color: #e74c3c;
+    color: white;
+    font-family: 'DS-digital';
+}
+
+.pin-button, .action-button {
+    background: #34495e;
+    color: white;
+    padding: 15px; /* Mantenemos el padding para hacer los botones cuadrados */
+    font-size: 16px; /* Mantenemos el tamaño de fuente */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%
+}
+
+.pin-button:hover, .action-button:hover {
+    background: #3b5998;
+}
+
+.pin-button:active, .action-button:active {
+    background: #2c3e50;
+    transform: scale(0.95);
+}
+
+#clear-button {
+    background: #e74c3c;
+}
+
+#clear-button:hover {
+    background: #c0392b;
+}
+
+#save-button {
+    background: #2ecc71;
+}
+
+#save-button:hover {
+    background: #27ae60;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    font-family: 'boldAdobe';
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover, .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#yellow-bar {
+    display: none;
+    background-color: #f1c40f;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    font-family: 'boldAdobe';
+}
+
+@media (max-width: 600px) {
+    .pinpad-container {
+        width: 90%;
+        margin: 10px;
+    }
+
+    .lcd {
+        font-size: 20px;
+    }
+
+    .lcd::after {
+        font-size: 16px;
+    }
+
+    .pin-button, .action-button {
+        padding: 15px;
+        font-size: 16px;
+    }
+}

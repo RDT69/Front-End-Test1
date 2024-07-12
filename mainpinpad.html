@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinpad Access</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    
+    <div class="modal" id="modal-welcome">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>Bienvenido a Pinpad</h1>
+            <p>Introduce un número de 6 dígitos y dale a guardar. La próxima vez podrás usar tu número para acceder.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-access">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>Introduce tu código</h1>
+            <p>Introduce tu número de 6 dígitos para continuar</p>
+            <p>(Tienes <span id="attempts">3</span> intentos)</p>
+        </div>
+    </div>
+
+    <div class="pinpad-container">
+        <div id="yellow-bar"></div>
+        <div id="lcd-screen" class="lcd">
+            Enter 6-digit Pin
+        </div>
+        <div class="buttons">
+            <button class="pin-button">7</button>
+            <button class="pin-button">8</button>
+            <button class="pin-button">9</button>
+            <button class="pin-button">4</button>
+            <button class="pin-button">5</button>
+            <button class="pin-button">6</button>
+            <button class="pin-button">1</button>
+            <button class="pin-button">2</button>
+            <button class="pin-button">3</button>
+            <button id="clear-button" class="action-button">C</button>
+            <button class="pin-button">0</button>
+            <button id="save-button" class="action-button">OK</button>
+        </div>
+    </div>
+    <script src="js/pinpad.js"></script>
+</body>
+
+</html>
