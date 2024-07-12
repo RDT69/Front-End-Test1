@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let attempts = 3;
     let isFirstTimeEntry = !savedPin;
     let isFirstFailure = true;
-    let isPinVisible = true; // Variable para controlar la visibilidad del PIN
+    let isPinVisible = true;
 
     const updateLcdScreen = () => {
         const pinToDisplay = isFirstTimeEntry ? enteredPin : verificationPin;
@@ -173,14 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle pin visibility
     lcdScreen.addEventListener('click', () => {
         isPinVisible = !isPinVisible;
         lcdScreen.classList.toggle('open-eye', isPinVisible);
         updateLcdScreen();
     });
 
-    // Verificar si hay un PIN guardado y mostrar el modal adecuado
     if (savedPin) {
         openModal(modalAccess);
         closeModal(modalWelcome);
